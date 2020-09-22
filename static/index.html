@@ -1,0 +1,150 @@
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <html>
+        <body>
+          <table id="table">
+            <tr id="tbody">
+              <th>Mattress Type</th>
+            </tr>
+          </table>
+      
+          <script type="text/javascript">
+          var table = document.getElementById("table");
+          var body = document.createElement("tbody");
+      
+          var beds = new Array(3);
+          beds[0] = ["A","http://factorymattresstexas.com/specials/spring-air/"];
+          beds[1] = ["B","http://factorymattresstexas.com/specials/beautyrest-lumbar-support"];
+          beds[2] = ["C","http://factorymattresstexas.com/specials/simmons-beautyrest/"];
+          console.log(beds)
+          table.appendChild(tbody);
+          beds.forEach(function(items) {
+              var row = document.createElement("tr");
+      
+              var cell = document.createElement("td");
+      
+              var link = document.createElement("a");
+              link.text = items[1]
+              link.href = items[1]
+              
+              cell.append(link);
+      
+              row.appendChild(cell)
+      
+              table.appendChild(row);
+          });
+      
+          </script>
+        </body>
+      </html> -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FCL Tracking</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <link rel="stylesheet" href="static/css/style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html">FCL TRACKING
+                    <img class="nav-image" src="static/images/nav_image.jpg">
+                  </a>
+                </div>
+              </div>
+            </nav> -->
+            <div class="hero text-center">
+              <h1>FCL TRACKING</h1>
+              <p>Track all your shipments here</p>
+            </div>
+            <div class="container">
+              <div class="row margin-top-50">
+                <div class="col-md-3">
+                  <aside class="filters">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">Filter Search</div>
+                      <div class="panel-body">
+                        <form id = "form">
+                          <div class="form-group">
+                            <ul class="list-group" id="filters">
+                              <li class="filter list-group-item">
+                                <label for="date">Enter full MBL including SCAC</label>
+                                <!-- <input class="form-control" id="mbl" type="text" placeholder="OOLU123456789"
+                                style=="width:140px;height:200px;"> -->
+                                <!-- <label for="state">Enter a State (2 letter code)</label>
+                                <input class="form-control" id="state" type="text" placeholder="AZ"> -->
+                                <textarea id="textarea" placeholder = "OOLU123456789" style="width:175px;height:400px;"></textarea>
+                              </li>
+                            </ul>
+                          </div>
+                          
+                          <button id="filter-btn" type="button" class="btn btn-default">Track it!</button>
+                              <!-- <div id="table-area" class="">
+                                <div class="col-md-10"></div>
+                                  <table id="table" class="table table-striped">
+                                  <thead>
+                                    <tr id ='tbody'>
+                                      <th class="table-head-mbl">MBL</th>
+                                      <th class="table-head-carrier">Carrier</th>
+                                      <th class="table-head-link">Link to Tracking</th>
+                                    </tr>
+                                  </thead>
+                                  
+                                </table>
+                              </div> -->
+                      </div>
+                      
+                          <!-- <button id="filter-btn-date" type="button" class="btn btn-default">Filter Table By State</button> -->
+                        </form>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+                <!-- <div class="col-md-10">
+                  <iframe id="inlineFrameExample"
+                    title="Inline Frame Example"
+                    width="800"
+                    height="600"
+                    src="https://www.maersk.com/tracking/">
+                  </iframe>
+                </div> -->
+                <div id="table-area" class="">
+                  <div class="col-md-6"></div>
+                  <table id="table" class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th class="table-head">MBL</th>
+                        <th class="table-head">Carrier</th>
+                        <th class="table-head">Link to Tracking</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+            </div>
+            <!-- <div id = "store_article"></div>
+            <footer class="footer">
+              <span class="bottom">FCL Tracking</span>
+            </footer> -->
+          </div>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+          
+          <script src="static/js/app.js"></script> 
+    </body>
+    </html>      
+
+
+<!-- 
+    var beds = new Array(3);
+          beds[0] = ["Spring Mattress",      "http://factorymattresstexas.com/specials/spring-air/"];
+          beds[1] = ["Rest Lumbar Support", "http://factorymattresstexas.com/specials/beautyrest-lumbar-support"];
+          beds[2] = ["Beauty Rest", "http://factorymattresstexas.com/specials/simmons-beautyrest/"];
+          console.log(beds) -->
