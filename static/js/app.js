@@ -22,6 +22,7 @@ const maeubase = "https://www.maersk.com/tracking/#tracking/"
 const medubase = "https://www.msc.com/track-a-shipment?agencyPath=usa"
 const oneybase = "https://ecomm.one-line.com/ecom/CUP_HOM_3301.do?sessLocale=en"
 const oolubase = "https://www.oocl.com/eng/Pages/default.aspx"
+const safmbase = "https://www.safmarine.com/tracking/#tracking/"
 const sudubase = "https://www.hamburgsud-line.com/liner/en/liner_services/ecommerce/track_trace/index.html"
 const zimubase = "https://www.zim.com/tools/track-a-shipment?consnumber="
 
@@ -94,13 +95,41 @@ function runEnter() {
         if (scac == 'OOLU') {
             array.push(oolubase)
         }
+        if (scac == 'SAFM') {
+          safmBL = input[i].substring(4,15)
+          safmlink = safmbase + safmBL
+          array.push(safmlink)
+        }
 
 
     }
     
-
-       var table = document.getElementById('table');
-       console.log(table);
+    
+          // var table = document.getElementById("table");
+          // var body = document.createElement("tbody");
+      
+          // var links = array;
+          // console.log(links)
+      
+          // table.appendChild(tbody);
+          // links.forEach(function(items) {
+          //     var row = document.createElement("tr");
+      
+          //     var cell = document.createElement("td");
+      
+          //     var link = document.createElement("a");
+          //     link.text = items
+          //     link.href = items
+      
+          //     cell.append(link);
+      
+          //     row.appendChild(cell)
+      
+          //     table.appendChild(row);
+          // });
+                
+      //  var table = document.getElementById('table');
+      //  console.log(table);
         // var body = document.createElement('tbody');
         // console.log(body)
         // // table.appendChild('tbody');
@@ -162,16 +191,18 @@ function runEnter() {
       //   var hrefValue = array[j];
       //   anchorTag.href = hrefValue;
       //   placeToPutLinks.appendChild(anchorTag);
-        for (j = 0; j < array.length; j++){
+      
+      //code below works to add "http"  to body, but links are all the way at the top
+      for (j = 0; j < array.length; j++){
           var a = document.createElement('a'); 
           var row = tbody.append("tr");
           var cell = row.append("td");
           // cell.innerHTML = array[j];
             
-          var table = document.getElementById('table'); 
-            console.log(a)
+          var table = document.getElementById('table-area'); 
+            
                 // Create the text node for anchor element. 
-                var link = document.createTextNode("This is link"); 
+                var link = document.createTextNode(`Link:${j+1}`); 
                   
                 // Append the text node to anchor element. 
                 a.appendChild(link);  
@@ -184,10 +215,16 @@ function runEnter() {
                   
                 // Append the anchor element to the body. 
                 // 
-                document.body.prepend[a.href]  
+                document.body.append(a)  
+                var links = document.getElementsByTagName('a')
+                links[j].target = "_blank";
+          }
+      
 
 
         }
+
+
       console.log(table)  
       // }
       // var link = document.createElement('a');
@@ -196,7 +233,7 @@ function runEnter() {
       // document.body.appendChild(link);
 
     
-    }
+    
     //       var cell = row.append("td");
     //       cell.text(value);
     //       $('#datetime').value = ""
